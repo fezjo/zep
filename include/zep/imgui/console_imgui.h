@@ -28,7 +28,7 @@ struct ZepConsole : Zep::IZepComponent
         return (Zep::ZepEditor&)zepEditor;
     }
 
-    ZepConsole(fs::path& p)
+    ZepConsole(Zep::fs::path& p)
         : zepEditor(p, Zep::NVec2f(1.0f))
     {
         zepEditor.RegisterCallback(this);
