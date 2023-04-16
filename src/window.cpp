@@ -243,11 +243,10 @@ void ZepWindow::Notify(std::shared_ptr<ZepMessage> payload)
     else if (payload->messageId == Msg::MouseWheel)
     {
         /* TBD: From PR #106: this does not work correctly: It scrolls the text off the page
-        * completely at the bottom
+        * completely at the bottom */
         m_textOffsetPx = std::min(m_textSizePx.y, std::max(0.0f, m_textOffsetPx - 5 * stof(payload->str) * GetEditor().GetDisplay().GetFont(ZepTextType::Text).GetPixelHeight()));
         UpdateVisibleLineRange();
         DisableToolTipTillMove();
-        */
     }
 }
 
